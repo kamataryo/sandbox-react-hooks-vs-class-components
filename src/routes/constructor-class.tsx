@@ -8,12 +8,12 @@ export class ConstructorRoute extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      value: localStorage.getItem("constructor-example_class") || ""
+      value: localStorage.getItem("key-cl") || ""
     };
   }
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    localStorage.setItem("constructor-example_class", e.target.value);
+    localStorage.setItem("key-cl", e.target.value);
     this.setState({ value: e.target.value });
   };
 
@@ -21,7 +21,8 @@ export class ConstructorRoute extends React.Component<Props, State> {
     const { value } = this.state;
     return (
       <div>
-        <h1>{"Serialize value with LocalStorage."}</h1>
+        <h1>{"Constructor Sample"}</h1>
+        <p>{"Serialize value with localStorage."}</p>
         <label>{"Value: "}</label>
         <input type={"text"} value={value} onChange={this.onChange} />
         <ViewSource url={"/src/routes/constructor-class.tsx"} />

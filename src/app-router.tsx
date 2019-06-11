@@ -15,6 +15,12 @@ const Navigation: React.FC = () => (
         <Link to={`/${path}/`}>{path}</Link>
       </li>
     ))}
+    <li>
+      <p>
+        <i className="sandbox-legend-component" />
+        {"Working component area"}
+      </p>
+    </li>
   </ul>
 );
 
@@ -30,7 +36,11 @@ const AppRouter: React.FC = () => {
               key={path}
               path={`/${path}/`}
               exact
-              render={props => <Component {...props} />}
+              render={props => (
+                <main className="sandbox">
+                  <Component {...props} />
+                </main>
+              )}
             />
           );
         })}
