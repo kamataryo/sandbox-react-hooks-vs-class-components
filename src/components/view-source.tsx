@@ -38,7 +38,7 @@ const ViewSource: React.FC<Props> = ({ url }) => {
     [url]
   );
 
-  return <Highlight className={"jsx"}>{source}</Highlight>;
+  return <Highlight className={"tsx"}>{source}</Highlight>;
 };
 
 export default ViewSource;
