@@ -14,7 +14,13 @@ const ViewSource: React.FC<Props> = ({ url }) => {
     const fetchSource = async () => {
       if (!ignore) {
         const { data } = await axios(url);
-        setState({ source: data });
+        setState({
+          // remove myself
+          source: data
+            .split("\n")
+            .filter((line: string) => !/ViewSource/.test(line))
+            .join("\n")
+        });
       }
     };
 

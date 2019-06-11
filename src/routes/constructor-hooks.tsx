@@ -19,7 +19,6 @@ const ConstructorRoute: React.FC<Props> = () => {
       <h1>{"Serialize value with LocalStorage."}</h1>
       <label>{"Value: "}</label>
       <input type={"text"} value={value} onChange={onChange} />
-      <hr style={{ borderBottom: "" }} />
       <ViewSource url={"/src/routes/constructor-hooks.tsx"} />
     </div>
   );
