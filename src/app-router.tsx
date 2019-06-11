@@ -2,10 +2,14 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ConstructorClassRoute from "./routes/constructor-class";
 import ConstructorHooksRoute from "./routes/constructor-hooks";
+import ComponentDidMountClassRoute from "./routes/component-did-mount-class";
+import ComponentDidMountHooksRoute from "./routes/component-did-mount-hooks";
 
 const routes: { [path: string]: any } = {
   "constructor/class": { Component: ConstructorClassRoute },
-  "constructor/hooks": { Component: ConstructorHooksRoute }
+  "constructor/hooks": { Component: ConstructorHooksRoute },
+  "component-did-mount/class": { Component: ComponentDidMountClassRoute },
+  "component-did-mount/hooks": { Component: ComponentDidMountHooksRoute }
 };
 
 const Navigation: React.FC = () => (

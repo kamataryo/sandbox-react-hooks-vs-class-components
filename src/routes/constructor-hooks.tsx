@@ -4,14 +4,16 @@ import ViewSource from "./../components/view-source";
 type Props = {};
 type State = { readonly value: string };
 
-const ConstructorRoute: React.FC<Props> = () => {
-  const [{ value }, setValue] = useState<State>(() => ({
+export const ConstructorRoute: React.FC<Props> = () => {
+  const [state, setState] = useState<State>(() => ({
     value: localStorage.getItem("key-hk") || ""
   }));
 
+  const { value } = state;
+
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     localStorage.setItem("key-hk", e.target.value);
-    setValue({ value: e.target.value });
+    setState({ value: e.target.value });
   };
 
   return (
