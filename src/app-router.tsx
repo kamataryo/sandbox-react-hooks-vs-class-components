@@ -4,12 +4,18 @@ import ConstructorClassRoute from "./routes/constructor-class";
 import ConstructorHooksRoute from "./routes/constructor-hooks";
 import ComponentDidMountClassRoute from "./routes/component-did-mount-class";
 import ComponentDidMountHooksRoute from "./routes/component-did-mount-hooks";
+import ReducerWithRedux from "./routes/reducer-with-redux";
+import ReducerWithHooks from "./routes/reducer-with-hooks";
+import ReducerLikeReduxWithHooks from "./routes/reducer-like-redux-with-hooks";
 
 const routes: { [path: string]: any } = {
   "constructor/class": { Component: ConstructorClassRoute },
   "constructor/hooks": { Component: ConstructorHooksRoute },
   "componentDidMount/class": { Component: ComponentDidMountClassRoute },
-  "componentDidMount/hooks": { Component: ComponentDidMountHooksRoute }
+  "componentDidMount/hooks": { Component: ComponentDidMountHooksRoute },
+  "reducer/redux": { Component: ReducerWithRedux },
+  "reducer/hooks": { Component: ReducerWithHooks },
+  "reducer-like-redux/hooks": { Component: ReducerLikeReduxWithHooks }
 };
 
 const Navigation: React.FC = () => (
