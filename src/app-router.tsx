@@ -8,8 +8,8 @@ import ComponentDidMountHooksRoute from "./routes/component-did-mount-hooks";
 const routes: { [path: string]: any } = {
   "constructor/class": { Component: ConstructorClassRoute },
   "constructor/hooks": { Component: ConstructorHooksRoute },
-  "component-did-mount/class": { Component: ComponentDidMountClassRoute },
-  "component-did-mount/hooks": { Component: ComponentDidMountHooksRoute }
+  "componentDidMount/class": { Component: ComponentDidMountClassRoute },
+  "componentDidMount/hooks": { Component: ComponentDidMountHooksRoute }
 };
 
 const Navigation: React.FC = () => (

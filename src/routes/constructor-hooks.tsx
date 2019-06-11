@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import ViewSource from "./../components/view-source";
 
 type Props = {};
 type State = { readonly value: string };
 
-export const ConstructorRoute: React.FC<Props> = () => {
-  const [state, setState] = useState<State>(() => ({
+const App: React.FC<Props> = () => {
+  const [state, setState] = React.useState<State>(() => ({
     value: localStorage.getItem("key-hk") || ""
   }));
 
@@ -18,7 +18,7 @@ export const ConstructorRoute: React.FC<Props> = () => {
 
   return (
     <div>
-      <h1>{"Constructor Sample"}</h1>
+      <h1>{"Constructor Sample with Hooks"}</h1>
       <p>{"Serialize value with localStorage."}</p>
       <label>{"Value: "}</label>
       <input type={"text"} value={value} onChange={onChange} />
@@ -27,4 +27,4 @@ export const ConstructorRoute: React.FC<Props> = () => {
   );
 };
 
-export default ConstructorRoute;
+export default App;

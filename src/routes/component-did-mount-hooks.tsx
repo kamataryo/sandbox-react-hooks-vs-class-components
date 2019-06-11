@@ -2,19 +2,13 @@ import React from "react";
 import ViewSource from "./../components/view-source";
 
 type Props = {};
-type State = { readonly keys: string };
 
-export const ComponentDidMountRoute: React.FC<Props> = () => {
-  const [state, setState] = React.useState<State>(() => ({
-    keys: ""
-  }));
-
-  const { keys } = state;
+const App: React.FC<Props> = () => {
+  const [keys, setKeys] = React.useState<string>("");
 
   React.useEffect(
     () => {
-      const onKeyDown = (e: React.KeyboardEvent) =>
-        setState({ keys: keys + e.key });
+      const onKeyDown = (e: React.KeyboardEvent) => setKeys(keys + e.key);
       window.addEventListener<any>("keydown", onKeyDown);
       return () => window.removeEventListener<any>("keydown", onKeyDown);
     },
@@ -23,15 +17,12 @@ export const ComponentDidMountRoute: React.FC<Props> = () => {
 
   return (
     <div>
-      <h1>{"ComponentDidMount and componentWillUnmount Sample"}</h1>
+      <h1>{"DidMount/WillUnmount Sample with Hooks"}</h1>
       <p>{"Try `keydown`."}</p>
-      <dl>
-        <dt>{"keys:"}</dt>
-        <dd>{keys}</dd>
-      </dl>
+      <p>{`keys: ${keys}`}</p>
       <ViewSource url={"/src/routes/component-did-mount-hooks.tsx"} />
     </div>
   );
 };
 
-export default ComponentDidMountRoute;
+export default App;

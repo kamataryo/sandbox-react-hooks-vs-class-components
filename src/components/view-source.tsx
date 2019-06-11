@@ -3,18 +3,13 @@ import axios from "axios";
 import Highlight from "react-highlight";
 
 type Props = { readonly url: string };
-type State = { readonly source: string; error: boolean };
+type State = { readonly source: string };
 
 const ViewSource: React.FC<Props> = ({ url }) => {
-  const [{ source }, setState] = React.useState<State>({
-    source: "",
-    error: false
-  });
+  const [{ source }, setState] = React.useState<State>({ source: "" });
 
   React.useEffect(
     () => {
-      let error = false;
-
       const fetchSource = async () => {
         let source = "";
         try {
@@ -28,9 +23,8 @@ const ViewSource: React.FC<Props> = ({ url }) => {
             process.env.NODE_ENV === "development"
               ? "Please try with `NODE_ENV=production`."
               : err.message;
-          error = true;
         }
-        setState({ source, error });
+        setState({ source });
       };
 
       fetchSource();

@@ -4,7 +4,7 @@ import ViewSource from "./../components/view-source";
 type Props = {};
 type State = { readonly keys: string };
 
-export class ComponentDidMountRoute extends React.Component<Props, State> {
+class App extends React.Component<Props, State> {
   state = { keys: "" };
 
   componentDidMount() {
@@ -22,16 +22,13 @@ export class ComponentDidMountRoute extends React.Component<Props, State> {
     const { keys } = this.state;
     return (
       <div>
-        <h1>{"ComponentDidMount and componentWillUnmount Sample"}</h1>
+        <h1>{"DidMount/WillUnmount Sample with Class Component"}</h1>
         <p>{"Try `keydown`."}</p>
-        <dl>
-          <dt>{"keys:"}</dt>
-          <dd>{keys}</dd>
-        </dl>
+        <p>{`keys: ${keys}`}</p>
         <ViewSource url={"/src/routes/component-did-mount-class.tsx"} />
       </div>
     );
   }
 }
 
-export default ComponentDidMountRoute;
+export default App;
