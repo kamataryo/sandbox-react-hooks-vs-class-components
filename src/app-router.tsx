@@ -5,7 +5,7 @@ import ConstructorHooks from "./routes/constructor-hooks";
 import ComponentDidMountClass from "./routes/component-did-mount-class";
 import ComponentDidMountHooks from "./routes/component-did-mount-hooks";
 import ComponentDidUpdateClass from "./routes/component-did-update-class";
-import ComponentDidUpdateHooks from "./routes/component-did-update-class";
+import ComponentDidUpdateHooks from "./routes/component-did-update-hooks";
 import ReducerWithRedux from "./routes/reducer-with-redux";
 import ReducerWithHooks from "./routes/reducer-with-hooks";
 import ReducerLikeReduxWithHooks from "./routes/reducer-like-redux-with-hooks";
