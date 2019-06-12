@@ -1,21 +1,23 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import ConstructorClassRoute from "./routes/constructor-class";
-import ConstructorHooksRoute from "./routes/constructor-hooks";
-import ComponentDidMountClassRoute from "./routes/component-did-mount-class";
-import ComponentDidMountHooksRoute from "./routes/component-did-mount-hooks";
+import ConstructorClass from "./routes/constructor-class";
+import ConstructorHooks from "./routes/constructor-hooks";
+import ComponentDidMountClass from "./routes/component-did-mount-class";
+import ComponentDidMountHooks from "./routes/component-did-mount-hooks";
 import ReducerWithRedux from "./routes/reducer-with-redux";
 import ReducerWithHooks from "./routes/reducer-with-hooks";
 import ReducerLikeReduxWithHooks from "./routes/reducer-like-redux-with-hooks";
+import MultipleStateHooks from "./routes/multiple-state-hooks";
 
 const routes: { [path: string]: any } = {
-  "constructor/class": { Component: ConstructorClassRoute },
-  "constructor/hooks": { Component: ConstructorHooksRoute },
-  "componentDidMount/class": { Component: ComponentDidMountClassRoute },
-  "componentDidMount/hooks": { Component: ComponentDidMountHooksRoute },
+  "constructor/class": { Component: ConstructorClass },
+  "constructor/hooks": { Component: ConstructorHooks },
+  "componentDidMount/class": { Component: ComponentDidMountClass },
+  "componentDidMount/hooks": { Component: ComponentDidMountHooks },
   "reducer/redux": { Component: ReducerWithRedux },
   "reducer/hooks": { Component: ReducerWithHooks },
-  "reducer-like-redux/hooks": { Component: ReducerLikeReduxWithHooks }
+  "reducer-like-redux/hooks": { Component: ReducerLikeReduxWithHooks },
+  "multiple-state/hooks": { Component: MultipleStateHooks }
 };
 
 const Navigation: React.FC = () => (
