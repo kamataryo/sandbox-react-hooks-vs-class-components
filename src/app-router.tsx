@@ -4,6 +4,8 @@ import ConstructorClass from "./routes/constructor-class";
 import ConstructorHooks from "./routes/constructor-hooks";
 import ComponentDidMountClass from "./routes/component-did-mount-class";
 import ComponentDidMountHooks from "./routes/component-did-mount-hooks";
+import ComponentDidUpdateClass from "./routes/component-did-update-class";
+import ComponentDidUpdateHooks from "./routes/component-did-update-class";
 import ReducerWithRedux from "./routes/reducer-with-redux";
 import ReducerWithHooks from "./routes/reducer-with-hooks";
 import ReducerLikeReduxWithHooks from "./routes/reducer-like-redux-with-hooks";
@@ -14,6 +16,8 @@ const routes: { [path: string]: any } = {
   "constructor/hooks": { Component: ConstructorHooks },
   "componentDidMount/class": { Component: ComponentDidMountClass },
   "componentDidMount/hooks": { Component: ComponentDidMountHooks },
+  "componentDidUpdate/class": { Component: ComponentDidUpdateClass },
+  "componentDidUpdate/hooks": { Component: ComponentDidUpdateHooks },
   "reducer/redux": { Component: ReducerWithRedux },
   "reducer/hooks": { Component: ReducerWithHooks },
   "reducer-like-redux/hooks": { Component: ReducerLikeReduxWithHooks },
