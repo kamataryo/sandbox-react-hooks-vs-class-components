@@ -38,8 +38,8 @@ class App extends React.Component<Props, State> {
     return (
       <div>
         <h1>{"didUpdate Sample with Class Component"}</h1>
-        <p>{"Lazy incremental suggestion."}</p>
-        <label>{"category"}</label>
+        <p>{"Fetch after selection."}</p>
+        <label>{"category "}</label>
         <select onChange={this.onChange} value={category}>
           <option value="fruits">{"fruits"}</option>
           <option value="mamal">{"mamal"}</option>

@@ -27,8 +27,8 @@ const App: React.FC<Props> = () => {
   return (
     <div>
       <h1>{"didUpdate Sample with Hooks"}</h1>
-      <p>{"Lazy incremental suggestion."}</p>
-      <label>{"category"}</label>
+      <p>{"Fetch after selection."}</p>
+      <label>{"category "}</label>
       <select onChange={onChange} value={category}>
         <option value="fruits">{"fruits"}</option>
         <option value="mamal">{"mamal"}</option>
