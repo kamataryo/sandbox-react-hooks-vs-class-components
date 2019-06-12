@@ -6,14 +6,11 @@ type Props = {};
 const App: React.FC<Props> = () => {
   const [keys, setKeys] = React.useState<string>("");
 
-  React.useEffect(
-    () => {
-      const onKeyDown = (e: React.KeyboardEvent) => setKeys(keys + e.key);
-      window.addEventListener<any>("keydown", onKeyDown);
-      return () => window.removeEventListener<any>("keydown", onKeyDown);
-    },
-    [keys]
-  );
+  React.useEffect(() => {
+    const onKeyDown = (e: React.KeyboardEvent) => setKeys(keys => keys + e.key);
+    window.addEventListener<any>("keydown", onKeyDown);
+    return () => window.removeEventListener<any>("keydown", onKeyDown);
+  }, []);
 
   return (
     <div>
