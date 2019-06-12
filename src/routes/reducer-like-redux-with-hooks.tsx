@@ -2,10 +2,12 @@ import React from "react";
 import ViewSource from "../components/view-source";
 
 type AppState = { readonly value: number };
+type Action = { type: string };
+type Dispatch = React.Dispatch<Action>;
 
 const initialState = { value: 0 };
 
-const reducer = (state = initialState, action: { type: string }): AppState => {
+const reducer = (state = initialState, action: Action): AppState => {
   switch (action.type) {
     case "INCREMENT":
       return { value: state.value + 1 };
@@ -16,9 +18,9 @@ const reducer = (state = initialState, action: { type: string }): AppState => {
   }
 };
 
-// Container
-const CounterContext = React.createContext<AppState>(null as any);
-const DispatchContext = React.createContext<React.Dispatch<any>>(null as any);
+// Context Provider
+const CounterContext = React.createContext<AppState>(initialState);
+const DispatchContext = React.createContext<Dispatch>(() => ({}));
 
 const Provider: React.FC = props => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
@@ -32,12 +34,13 @@ const Provider: React.FC = props => {
 };
 
 const App: React.FC = () => {
+  // Consumers
   const state = React.useContext(CounterContext);
   const dispatch = React.useContext(DispatchContext);
 
   return (
     <div>
-      <h1>{"Reuducer like redux with Hooks"}</h1>
+      <h1>{"Redux like Reuducer with Context and Hooks"}</h1>
       <button onClick={() => dispatch({ type: "INCREMENT" })}>
         {"increment"}
       </button>
