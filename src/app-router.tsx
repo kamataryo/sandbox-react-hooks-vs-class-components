@@ -10,6 +10,9 @@ import ReducerWithRedux from "./routes/reducer-with-redux";
 import ReducerWithHooks from "./routes/reducer-with-hooks";
 import ReducerLikeReduxWithHooks from "./routes/reducer-like-redux-with-hooks";
 import MultipleStateHooks from "./routes/multiple-state-hooks";
+import UseEffectNo2ndArg from "./routes/use-effect-no-2nd-arg";
+import UseEffectEmptyArray from "./routes/use-effect-empty-array";
+import UseEffectStateDeps from "./routes/use-effect-state-deps";
 
 const routes: { [path: string]: any } = {
   "constructor/class": { Component: ConstructorClass },
@@ -21,7 +24,10 @@ const routes: { [path: string]: any } = {
   "reducer/redux": { Component: ReducerWithRedux },
   "reducer/hooks": { Component: ReducerWithHooks },
   "reducer-like-redux/hooks": { Component: ReducerLikeReduxWithHooks },
-  "multiple-state/hooks": { Component: MultipleStateHooks }
+  "multiple-state/hooks": { Component: MultipleStateHooks },
+  "useEffect-no-2nd-arg/hooks": { Component: UseEffectNo2ndArg },
+  "useEffect-empty-array/hooks": { Component: UseEffectEmptyArray },
+  "useEffect-state-deps/hooks": { Component: UseEffectStateDeps }
 };
 
 const Navigation: React.FC = () => (
